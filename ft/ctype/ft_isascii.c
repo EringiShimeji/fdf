@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/09/04 19:48:49 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/09/04 19:50:22 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-
-int	main(void)
+int	ft_isascii(int c)
 {
-	printf("Hello World, %d!\n", ft_atoi("42"));
+	return (0 <= c && c <= 127);
 }

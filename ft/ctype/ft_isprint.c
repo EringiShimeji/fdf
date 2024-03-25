@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/09/04 19:51:04 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/09/05 00:34:05 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-
-int	main(void)
+int	ft_isprint(int c)
 {
-	printf("Hello World, %d!\n", ft_atoi("42"));
+	return (' ' <= c && c <= '~');
 }

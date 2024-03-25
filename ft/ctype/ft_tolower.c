@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/09/05 01:26:16 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/09/05 01:26:48 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-
-int	main(void)
+int	ft_tolower(int c)
 {
-	printf("Hello World, %d!\n", ft_atoi("42"));
+	if ('A' <= c && c <= 'Z')
+		return (c - 'A' + 'a');
+	return (c);
 }

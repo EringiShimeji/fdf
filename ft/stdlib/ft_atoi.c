@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/09/05 02:39:35 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/09/05 12:39:46 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+int	ft_atoi(const char *str)
 {
-	printf("Hello World, %d!\n", ft_atoi("42"));
+	return (ft_strtol(str, NULL, 10));
 }

@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   isalpha.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/09/04 18:49:01 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/09/04 19:47:21 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-
-int	main(void)
+int	ft_isalpha(int c)
 {
-	printf("Hello World, %d!\n", ft_atoi("42"));
+	return (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'));
 }
