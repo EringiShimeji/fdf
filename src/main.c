@@ -12,8 +12,14 @@
 
 #include "libft.h"
 #include "ft_printf.h"
+#include "mlx.h"
 
 int	main(void)
 {
+	void	*mlx;
+
 	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	mlx = mlx_init();
+	mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	mlx_loop(mlx);
 }
