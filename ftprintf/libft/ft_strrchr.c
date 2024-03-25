@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/05/16 22:24:07 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/05/18 17:02:02 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
-int	main(void)
+char	*ft_strrchr(char *s, int c)
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	int		index;
+	char	target;
+
+	index = ft_strlen(s);
+	target = c;
+	while (index >= 0)
+	{
+		if (s[index] == target)
+			return (s + index);
+		--index;
+	}
+	return (NULL);
 }

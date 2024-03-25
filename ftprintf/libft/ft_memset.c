@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/05/16 22:45:32 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/05/18 16:53:02 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
-int	main(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	unsigned char	d;
+	size_t			index;
+	char			*target;
+
+	d = c;
+	index = 0;
+	target = b;
+	while (index < len)
+	{
+		target[index] = d;
+		index++;
+	}
+	return (b);
 }

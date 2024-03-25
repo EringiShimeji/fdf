@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/05/18 02:12:30 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/05/22 07:02:26 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
+#include <stdlib.h>
 
-int	main(void)
+t_list	*ft_lstnew(void *content)
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	t_list	*l;
+
+	l = ft_calloc(1, sizeof(t_list));
+	if (!l)
+		return (NULL);
+	l->content = content;
+	l->next = NULL;
+	return (l);
 }

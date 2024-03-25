@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/05/18 15:50:11 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/05/18 15:52:27 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
+#include <stdlib.h>
 
-int	main(void)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	t_list	*cur;
+	t_list	*tmp;
+
+	cur = *lst;
+	while (cur != NULL)
+	{
+		del(cur->content);
+		tmp = cur->next;
+		free(cur);
+		cur = tmp;
+	}
+	*lst = NULL;
 }

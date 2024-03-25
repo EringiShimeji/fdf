@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   char.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/06/06 19:38:05 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/06/07 23:32:21 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "internal.h"
 
-int	main(void)
+void	parse_char_conv(t_output *output)
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	output->conv_type = C_CHAR;
+	output->buffer[0] = va_arg(*output->args, int);
+	output->buffer_size = 1;
+	output->buffer_ptr = output->buffer;
 }

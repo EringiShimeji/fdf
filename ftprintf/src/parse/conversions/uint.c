@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   uint.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/06/06 20:48:23 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/06/07 22:51:02 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "internal.h"
 
-int	main(void)
+void	parse_uint_conv(t_output *output)
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	unsigned int	arg;
+
+	output->conv_type = C_UINT;
+	arg = va_arg(*output->args, unsigned int);
+	if (output->flags & IS_FORCE_PLUS)
+		output->sign = '+';
+	if (output->flags & IS_FORCE_SPACE)
+		output->sign = ' ';
+	parse_ull_to_buf(output, arg, 10);
 }

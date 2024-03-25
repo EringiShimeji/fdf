@@ -7,7 +7,7 @@ SRCS := $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(SRCS:%.c=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:.o=.d)
 
-LIBS := ft
+LIBS := ft ftprintf
 INCLUDE := $(addprefix -I,$(LIBS))
 LDFLAGS := $(addprefix -L,$(LIBS)) $(addprefix -l,$(LIBS))
 
@@ -18,7 +18,7 @@ RM := rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(foreach lib,$(LIBS),make -C $(lib))
+	$(foreach lib,$(LIBS),make -C $(lib);)
 	$(CC) -o $@ $(LDFLAGS) $^
 
 $(BUILD_DIR)/%.o: %.c
@@ -26,11 +26,11 @@ $(BUILD_DIR)/%.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
-	$(foreach lib,$(LIBS),make -C $(lib) clean)
+	$(foreach lib,$(LIBS),make -C $(lib) clean;)
 	$(RM) $(BUILD_DIR)
 
 fclean: clean
-	$(foreach lib,$(LIBS),make -C $(lib) fclean)
+	$(foreach lib,$(LIBS),make -C $(lib) fclean;)
 	$(RM) $(NAME)
 
 re: fclean all

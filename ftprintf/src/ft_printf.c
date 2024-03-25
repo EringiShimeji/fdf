@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 12:21:42 by smatsuo           #+#    #+#             */
-/*   Updated: 2024/03/25 12:26:42 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/06/04 16:07:25 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/06/08 02:17:46 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "internal.h"
 
-int	main(void)
+int	ft_printf(const char *fmt, ...)
 {
-	ft_printf("Hello World, %d!\n", ft_atoi("42"));
+	va_list		ap;
+	t_output	output;
+
+	va_start(ap, fmt);
+	init_output(&output);
+	output.fmt = (char *)fmt;
+	output.args = &ap;
+	parse(&output);
+	return (output.written_size);
 }
